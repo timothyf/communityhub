@@ -1,0 +1,17 @@
+<%= form_with(model: community_member_profile, local: true) do |form| %>
+  <% if community_member_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(community_member_profile.errors.count, "error") %> prohibited this community_member_profile from being saved:</h2>
+
+      <ul>
+      <% community_member_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

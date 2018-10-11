@@ -1,0 +1,54 @@
+<main role="main">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Community Hub</h1>
+      <h3>Your home for local communities, groups, and events.</h3>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign up &raquo;</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+
+    <h2>Our Communities</h2>
+    <div class="row">
+      <% @communities.each do |community| %>
+        <div class="col-md-4">
+          <h3><%= link_to community.name, community %></h3>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h2>Featured Groups</h2>
+    <div class="row">
+      <% @groups.each do |group| %>
+        <div class="col-md-4">
+          <h5><%= link_to group.name, community_group_url(group.community, group) %></h5>
+          <h6><%= link_to group.community.name, group.community %></h6>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h2>Upcoming Events</h2>
+    <div class="row">
+      <% @events.each do |event| %>
+        <div class="col-md-4">
+          <h5><%= link_to event.name, community_group_event_url(event.community, event.group, event) %></h5>
+          <h6><%= link_to event.group.name, community_group_url(event.group.community, event.group) %></h6>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <hr>
+  </div>
+</main>

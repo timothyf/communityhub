@@ -1,0 +1,2 @@
+module CommunityMemberProfilesHelper
+end

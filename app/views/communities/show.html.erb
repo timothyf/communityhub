@@ -1,0 +1,26 @@
+<main role="main">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3"><%= @community.name %></h1>
+      <p>More info coming soon.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign up &raquo;</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <h2>Featured Groups</h2>
+    <div class="row">
+      <% @community.groups.each do |group| %>
+        <div class="col-md-4">
+          <h3><%= link_to group.name, community_group_url(group.community, group) %></h3>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      <% end %>
+    </div>
+    <!-- <br> <%= link_to 'New Community', new_community_path %> -->
+    <br>
+    <hr>
+  </div>
+</main>
