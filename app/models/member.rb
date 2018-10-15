@@ -4,7 +4,7 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :trackable
-#         :confirmable, :trackable
+#         :confirmable
 
 
   has_one   :member_profile, :dependent => :destroy
@@ -14,8 +14,8 @@ class Member < ApplicationRecord
   has_many  :groups, through: :group_memberships
   has_many  :community_memberships
   has_many  :communities, through: :community_memberships
-  has_many  :registrations
-  has_many  :events, through: :registrations
+  has_many  :event_registrations
+  has_many  :events, through: :event_registrations
 
   after_create :create_member_profile
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :event_registrations
   resources :organizers
   devise_for :admin_users, {class_name: 'Member'}.merge(ActiveAdmin::Devise.config)
   ActiveAdmin.routes(self)
@@ -18,7 +19,6 @@ Rails.application.routes.draw do
         resources :events
     end
   end
-  resources :registrations
   resources :group_memberships
   resources :venues
   resources :group_member_profiles
