@@ -1,0 +1,17 @@
+<%= form_with(model: sponsorship_level, local: true) do |form| %>
+  <% if sponsorship_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sponsorship_level.errors.count, "error") %> prohibited this sponsorship_level from being saved:</h2>
+
+      <ul>
+      <% sponsorship_level.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
